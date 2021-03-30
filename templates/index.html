@@ -1,0 +1,26 @@
+{% extends "juice/templates/index.html" %}
+
+{% block hero %}
+<section style="padding:10px">
+    <h1 class="text-center heading-text">
+        Writing markdown in Vim made easier
+    </h1>
+    <h3 class="text" style="text-align: center;">
+        Instantly render your markdown files written in <b>Vim</b> and previewed in the <b>browser</b>.
+        Install a <b>Vim plugin</b> and a compatible <b>mini server</b> to get started.
+    </h3>
+</section>
+
+<div class="explore-more text"
+    onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'})">
+    Explore More ⇩
+</div>
+{% endblock hero %}
+
+{% block footer %}
+    <footer>
+        <small class="subtext">
+            <a href="https://github.com/instant-markdown">Instant Markdown project</a> © 2021
+        </small>
+    </footer>
+{% endblock footer %}

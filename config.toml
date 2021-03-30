@@ -6,6 +6,7 @@ compile_sass = true
 
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = false
+theme = "juice"
 
 [markdown]
 # Whether to do syntax highlighting
@@ -14,3 +15,12 @@ highlight_code = true
 
 [extra]
 # Put all your custom variables here
+juice_logo_name = "Instant Markdown"
+juice_logo_path = "logo.png"
+juice_extra_menu = [
+    { title = "Vim plugin", link = "https://github.com/instant-markdown/vim-instant-markdown"},
+    { title = "Mini server", link = "https://github.com/instant-markdown/instant-markdown-d"},
+]
+repository_url = "https://github.com/instant-markdown"
+meta_title = "Instant Markdown"
+meta_description = "Develop software for writing markdown from Vim"
