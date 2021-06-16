@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>News |  </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+    :root {
+        /* Primary theme color */
+        --primary-color: #fbf1c7;
+        /* Primary theme text color */
+        --primary-text-color: #282828;
+        /* Primary theme link color */
+        --primary-link-color: #F9BB2D;
+        /* Secondary color: the background body color */
+        --secondary-color: #fcfaf6;
+        --secondary-text-color: #303030;
+        /* Highlight text color of table of content */
+        --toc-highlight-text-color: #d46e13;
+    }
+	.logo img {
+		border-radius: 10% !important;
+	}
+</style>
+
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;instant-markdown.github.io&#x2F;juice.css">
+    
+    
+</head>
+
+<body>
+    
+<header class="box-shadow">
+    
+
+<a href="https:&#x2F;&#x2F;instant-markdown.github.io&#x2F;">
+    <div class="logo">
+        <img src="https:&#x2F;&#x2F;instant-markdown.github.io&#x2F;tech_openmoji.svg" alt="logo">
+        Instant Markdown
+    </div>
+</a>
+
+<nav>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;instant-markdown.github.io&#x2F;news&#x2F;">News</a>
+    
+    
+        
+        <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;github.com&#x2F;instant-markdown&#x2F;vim-instant-markdown">Vim plugin</a>
+        
+        <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;github.com&#x2F;instant-markdown&#x2F;instant-markdown-d">Mini server</a>
+        
+    
+</nav>
+
+</header>
+
+
+    <main>
+        
+        
+        
+        
+        
+        <div class="toc">
+            <div class="toc-sticky">
+                
+                <div class="toc-item">
+                    <a class="subtext" href="https://instant-markdown.github.io/news/#instant-markdown-d-version-0-2-0-released-rocket">instant-markdown-d version 0.2.0 released 🚀</a>
+                </div>
+                
+                
+            </div>
+        </div>
+        
+        
+
+        <div class="content text">
+            
+<div class="heading-text"></div>
+<h1 id="instant-markdown-d-version-0-2-0-released-rocket">instant-markdown-d version 0.2.0 released 🚀</h1>
+<p><strong>Date: 2021-06-16</strong></p>
+<p>With new features and bug fixes stabilzed after a long wait with release candidates!</p>
+<ul>
+<li><a href="https://github.com/instant-markdown/instant-markdown-d/blob/master/CHANGELOG.md#020-2021-06-16">Changelog</a></li>
+<li>Available at <a href="https://www.npmjs.com/package/instant-markdown-d">NPM</a></li>
+</ul>
+<p>P.S.: We now have a &quot;technologist&quot; logo for our projects, courtesy of <a href="https://openmoji.org/library/#search=technologist&amp;emoji=1F9D1-200D-1F4BB">OpenMoji</a></p>
+
+
+        </div>
+
+        
+        
+    </main>
+
+    
+    <footer>
+        <small class="subtext">
+            <a href="https://github.com/instant-markdown">Instant Markdown project</a> © 2021
+        </small>
+    </footer>
+
+</body>
+<script>
+    function highlightNav(heading) {
+        let pathname = location.pathname;
+        document.querySelectorAll(".toc a").forEach((item) => {
+            item.classList.remove("active");
+        });
+        document.querySelector(".toc a[href$='" + pathname + "#" + heading + "']").classList.add("active");
+    }
+
+    let currentHeading = "";
+    window.onscroll = function () {
+        let h = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
+        let elementArr = [];
+
+        h.forEach(item => {
+            if (item.id !== "") {
+                elementArr[item.id] = item.getBoundingClientRect().top;
+            }
+        });
+        elementArr.sort();
+        for (let key in elementArr) {
+            if (!elementArr.hasOwnProperty(key)) {
+                continue;
+            }
+            if (elementArr[key] > 0 && elementArr[key] < 300) {
+                if (currentHeading !== key) {
+                    highlightNav(key);
+                    currentHeading = key;
+                }
+                break;
+            }
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://instant-markdown.github.io/sitemap.xml

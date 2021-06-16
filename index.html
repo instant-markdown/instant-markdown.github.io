@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+    :root {
+        /* Primary theme color */
+        --primary-color: #fbf1c7;
+        /* Primary theme text color */
+        --primary-text-color: #282828;
+        /* Primary theme link color */
+        --primary-link-color: #F9BB2D;
+        /* Secondary color: the background body color */
+        --secondary-color: #fcfaf6;
+        --secondary-text-color: #303030;
+        /* Highlight text color of table of content */
+        --toc-highlight-text-color: #d46e13;
+    }
+	.logo img {
+		border-radius: 10% !important;
+	}
+</style>
+
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;instant-markdown.github.io&#x2F;juice.css">
+    
+    
+</head>
+
+<body>
+    
+
+    <header class="pos-absolute" style="background-color: transparent">
+        
+
+<a href="https:&#x2F;&#x2F;instant-markdown.github.io&#x2F;">
+    <div class="logo">
+        <img src="https:&#x2F;&#x2F;instant-markdown.github.io&#x2F;tech_openmoji.svg" alt="logo">
+        Instant Markdown
+    </div>
+</a>
+
+<nav>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;instant-markdown.github.io&#x2F;news&#x2F;">News</a>
+    
+    
+        
+        <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;github.com&#x2F;instant-markdown&#x2F;vim-instant-markdown">Vim plugin</a>
+        
+        <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;github.com&#x2F;instant-markdown&#x2F;instant-markdown-d">Mini server</a>
+        
+    
+</nav>
+
+    </header>
+
+    <div class="hero">
+        
+<section style="padding:10px">
+    <h1 class="text-center heading-text">
+        Writing markdown in Vim made easier
+    </h1>
+    <h3 class="text" style="text-align: center;">
+        Instantly render your markdown files written in <b>Vim</b> and previewed in the <b>browser</b>.
+        Install a <b>Vim plugin</b> and a compatible <b>mini server</b> to get started.
+    </h3>
+</section>
+<img class="hero-image" style="width: 50%" src="https:&#x2F;&#x2F;instant-markdown.github.io&#x2F;tech_openmoji.svg">
+
+
+<div class="explore-more text"
+    onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'})">
+    Explore More ⇩
+</div>
+
+    </div>
+
+    
+
+    <main>
+        
+        
+        
+        
+        
+        <div class="toc">
+            <div class="toc-sticky">
+                
+                <div class="toc-item">
+                    <a class="subtext" href="https://instant-markdown.github.io/#contributing">Contributing</a>
+                </div>
+                
+                
+                <div class="toc-item-child">
+                    <a class="subtext" href="https://instant-markdown.github.io/#help-us-make-the-project-sustainable"><small>- Help us make the project sustainable</small></a>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+        
+        
+
+        <div class="content text">
+            
+            <div id="features" class="heading-text">Overview</div>
+            <h2 id="contributing">Contributing</h2>
+<p>Instant markdown is a community-supported open-source project. If you found the software useful,
+you could support us with:</p>
+<ul>
+<li>code, via triaging issues and submitting pull-requests</li>
+<li>kind, by contributing to our bounty program hosted at Open Collective</li>
+</ul>
+<h3 id="help-us-make-the-project-sustainable">Help us make the project sustainable</h3>
+<script src="https://opencollective.com/instant-markdown/banner.js"></script>
+<noscript>
+<a href="https://opencollective.com/instant-markdown/donate" target="_blank">
+  <img src="https://opencollective.com/instant-markdown/donate/button@2x.png?color=blue" width=300 />
+</a>
+</noscript>
+
+            
+        </div>
+
+        
+        
+    </main>
+
+    
+    <footer>
+        <small class="subtext">
+            <a href="https://github.com/instant-markdown">Instant Markdown project</a> © 2021
+        </small>
+    </footer>
+
+</body>
+<script>
+    function highlightNav(heading) {
+        let pathname = location.pathname;
+        document.querySelectorAll(".toc a").forEach((item) => {
+            item.classList.remove("active");
+        });
+        document.querySelector(".toc a[href$='" + pathname + "#" + heading + "']").classList.add("active");
+    }
+
+    let currentHeading = "";
+    window.onscroll = function () {
+        let h = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
+        let elementArr = [];
+
+        h.forEach(item => {
+            if (item.id !== "") {
+                elementArr[item.id] = item.getBoundingClientRect().top;
+            }
+        });
+        elementArr.sort();
+        for (let key in elementArr) {
+            if (!elementArr.hasOwnProperty(key)) {
+                continue;
+            }
+            if (elementArr[key] > 0 && elementArr[key] < 300) {
+                if (currentHeading !== key) {
+                    highlightNav(key);
+                    currentHeading = key;
+                }
+                break;
+            }
+        }
+    }
+</script>
+
+</html>
