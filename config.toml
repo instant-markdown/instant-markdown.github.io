@@ -16,7 +16,7 @@ highlight_code = true
 [extra]
 # Put all your custom variables here
 juice_logo_name = "Instant Markdown"
-juice_logo_path = "logo.png"
+juice_logo_path = "tech_openmoji.svg"
 juice_extra_menu = [
     { title = "Vim plugin", link = "https://github.com/instant-markdown/vim-instant-markdown"},
     { title = "Mini server", link = "https://github.com/instant-markdown/instant-markdown-d"},
